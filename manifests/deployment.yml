@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "volurkuber-b1ff"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "volurkuber-b1ff"
+  template:
+    metadata:
+      labels:
+        app: "volurkuber-b1ff"
+    spec:
+      containers:
+        - name: "volurkuber-b1ff"
+          image: "volurcontainer.azurecr.io/volurkuber"
+          ports:
+          - containerPort: 443
